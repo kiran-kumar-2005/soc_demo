@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Combined Form Styles</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f9f9f9;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  /* Shared box style */
+  .form-container {
+    background-color: lightgrey;
+    border: 2px solid black;
+    padding: 15px;
+    margin: 0 auto 50px;
+    width: 320px;
+    border-radius: 5px;
+  }
+
+  /* 1. Grid Form */
+  .grid-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
+    align-items: center;
+  }
+
+  .grid-form div {
+    grid-column: 2 / 3;
+  }
+
+  .grid-form button {
+    grid-column: 1 / 3;
+    padding: 8px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  /* 2. Table Form */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  table td {
+    padding: 8px;
+  }
+
+  table label {
+    display: inline-block;
+    width: 100%;
+  }
+
+  table input[type="text"],
+  table input[type="email"] {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  table input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+
+  /* 3. Vertical Form */
+  .vertical-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .vertical-form label {
+    font-weight: bold;
+  }
+
+  .vertical-form input[type="text"],
+  .vertical-form input[type="email"] {
+    padding: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+
+  .vertical-form div.gender-group {
+    display: flex;
+    gap: 15px;
+  }
+
+  .vertical-form button {
+    padding: 8px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h2>1. Grid Form Style</h2>
+<div class="form-container">
+  <form class="grid-form">
+    <label for="name1">Name</label>
+    <input type="text" id="name1" name="name" placeholder="Your name" />
+
+    <label for="email1">Email</label>
+    <input type="email" id="email1" name="email" placeholder="Your email" />
+
+    <label for="usn1">USN</label>
+    <input type="text" id="usn1" name="usn" placeholder="USN" />
+
+    <label>Gender</label>
+    <div>
+      <input type="radio" id="male1" name="gender" value="Male" />
+      <label for="male1">Male</label>
+      <input type="radio" id="female1" name="gender" value="Female" />
+      <label for="female1">Female</label>
+    </div>
+
+    <label for="phone1">Phone</label>
+    <input type="text" id="phone1" name="phone" placeholder="Phone" />
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<h2>2. Table Form Style</h2>
+<div class="form-container">
+  <form>
+    <table>
+      <tr>
+        <td><label for="name2">Name</label></td>
+        <td><input type="text" id="name2" name="name" placeholder="Name" /></td>
+      </tr>
+      <tr>
+        <td><label for="email2">Email</label></td>
+        <td><input type="email" id="email2" name="email" placeholder="Email" /></td>
+      </tr>
+      <tr>
+        <td><label for="usn2">USN</label></td>
+        <td><input type="text" id="usn2" name="usn" placeholder="USN" /></td>
+      </tr>
+      <tr>
+        <td><label>Gender</label></td>
+        <td>
+          <input type="radio" id="male2" name="gender" value="Male" />
+          <label for="male2">Male</label>
+          <input type="radio" id="female2" name="gender" value="Female" />
+          <label for="female2">Female</label>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="phone2">Phone</label></td>
+        <td><input type="text" id="phone2" name="phone" placeholder="Phone" /></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="submit" value="Submit" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<h2>3. Vertical Form Style</h2>
+<div class="form-container">
+  <form class="vertical-form">
+    <label for="name3">Name</label>
+    <input type="text" id="name3" name="name" placeholder="Name" />
+
+    <label for="email3">Email</label>
+    <input type="email" id="email3" name="email" placeholder="Email" />
+
+    <label for="usn3">USN</label>
+    <input type="text" id="usn3" name="usn" placeholder="USN" />
+
+    <label>Gender</label>
+    <div class="gender-group">
+      <label><input type="radio" name="gender" value="Male" /> Male</label>
+      <label><input type="radio" name="gender" value="Female" /> Female</label>
+    </div>
+
+    <label for="phone3">Phone</label>
+    <input type="text" id="phone3" name="phone" placeholder="Phone" />
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
