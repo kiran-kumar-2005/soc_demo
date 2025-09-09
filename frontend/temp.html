@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shiva | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e88e5;   /* Blue theme */
+      --accent: #ff7043;    /* Coral accent */
+      --bg: #f9fafc;        /* Light background */
+      --card-bg: #ffffff;
+      --text: #2c2c2c;
+      --shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), #1565c0);
+      color: #fff;
+      padding: 2rem 0 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    header h1 { font-size: 2.5rem; letter-spacing: 2px; }
+    header p { margin-top: 0.5rem; font-size: 1.2rem; font-weight: 400; }
+    nav { margin-top: 1rem; }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    /* About */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    .about-img {
+      flex: 1 1 180px;
+      max-width: 180px;
+      margin-right: 2rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--primary);
+    }
+    .about-img img { width: 100%; display: block; border-radius: 50%; }
+    .about-text { flex: 2 1 300px; }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .skill-card {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 8px;
+      padding: 1rem 2rem;
+      min-width: 120px;
+      text-align: center;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .skill-card:hover { background: var(--accent); transform: scale(1.05); }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .project-card {
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
+    .project-card:hover { transform: translateY(-5px); }
+    .project-img { width: 100%; height: 160px; object-fit: cover; }
+    .project-content { padding: 1.2rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .project-title { font-size: 1.2rem; color: var(--primary); margin-bottom: 0.5rem; }
+    .project-desc { font-size: 0.95rem; margin-bottom: 1rem; color: #555; }
+    .project-link { color: var(--accent); font-weight: 700; text-decoration: none; }
+    .project-link:hover { color: var(--primary); }
+
+    /* Contact */
+    #contact form {
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    form button {
+      background: var(--primary);
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    form button:hover { background: var(--accent); }
+
+    footer {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 0;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 700px) {
+      .about { flex-direction: column; text-align: center; }
+      .about-img { margin: 0 0 1rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shiva</h1>
+    <p>Full Stack Developer | Tech Explorer</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="about-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlYqCTYFhIOfgddokgnxIB5yWONNwgDTGKpg&s" alt="Shiva">
+      </div>
+      <div class="about-text">
+        <h2 class="section-title">About Me</h2>
+        <p>
+          I'm Shiva, a developer who loves turning ideas into reality with code.  
+          I specialize in building web apps that are not only functional but also intuitive and visually engaging.  
+          When I’m not coding, you’ll find me exploring new technologies, contributing to open-source, or sketching UI designs.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <img class="project-img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="E-commerce Platform">
+          <div class="project-content">
+            <div>
+              <div class="project-title">E-Commerce Platform</div>
+              <div class="project-desc">A full-stack online store with product listings, cart system, and secure checkout built using React and Node.js.</div>
+            </div>
+            <a class="project-link" href="#" target="_blank">Explore</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img class="project-img" src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=400&q=80" alt="Chat Application">
+          <div class="project-content">
+            <div>
+              <div class="project-title">Realtime Chat App</div>
+              <div class="project-desc">A socket.io powered chat application with authentication and private rooms. Deployed on Heroku with MongoDB backend.</div>
+            </div>
+            <a class="project-link" href="#" target="_blank">Explore</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img class="project-img" src="https://images.unsplash.com/photo-1537432376769-00a0b1e4c3c7?auto=format&fit=crop&w=400&q=80" alt="Portfolio Website">
+          <div class="project-content">
+            <div>
+              <div class="project-title">Personal Portfolio</div>
+              <div class="project-desc">The website you’re viewing now! Designed and developed from scratch using HTML, CSS, and JavaScript.</div>
+            </div>
+            <a class="project-link" href="#" target="_blank">Explore</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills">
+        <div class="skill-card">HTML5 & CSS3</div>
+        <div class="skill-card">JavaScript (ES6+)</div>
+        <div class="skill-card">React & Redux</div>
+        <div class="skill-card">Node.js & Express</div>
+        <div class="skill-card">MongoDB</div>
+        <div class="skill-card">REST APIs</div>
+        <div class="skill-card">Git & GitHub</div>
+        <div class="skill-card">UI/UX Wireframing</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Get In Touch</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2024 Shiva | Designed & Coded with ❤️
+  </footer>
+</body>
+</html>
